@@ -2,6 +2,10 @@
  * Setup User Interface 
  * Specifically, so that we can handle user input via stdin
  */
+
+const {upKey,downKey,leftKey,rightKey, greet,bye,lol,keyMsg} = require("./constants");
+
+
 let connection;
 
 const setupInput = function(conn) {
@@ -17,36 +21,36 @@ const setupInput = function(conn) {
     if (key === '\u0003'){
       process.exit()
     }
-    if (key === 'w') {
-      //console.log("up");
-      connection.write("Move: up");
-    }
-    if (key === 'a') {
-      //console.log("left");
-      connection.write("Move: left");
-    }
-    if (key === 's') {
-      //console.log("down");
-      connection.write("Move: down");
-    }
-    if (key === 'd') {
-      //console.log("right");
-      connection.write("Move: right");
-    }
+    if (key === upKey) {
 
-    if (key === 'g') {
+      connection.write(keyMsg.up);
+    }
+    if (key === leftKey) {
 
-      connection.write("Say: greetings!");
+      connection.write(keyMsg.left);
+    }
+    if (key === downKey) {
+
+      connection.write(keyMsg.down);
+    }
+    if (key === rightKey) {
+
+      connection.write(keyMsg.right);
     }
 
-    if (key == 'b') {
+    if (key === greet) {
 
-      connection.write("Say: bye-bye!");
+      connection.write(keyMsg.greet);
     }
 
-    if (key === 'l') {
+    if (key == bye) {
 
-      connection.write("Say: LOLZ...");
+      connection.write(keyMsg.bye);
+    }
+
+    if (key === lol) {
+
+      connection.write(keyMsg.lol);
     }
   }
 
