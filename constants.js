@@ -1,6 +1,8 @@
 const IP = '10.0.2.15';
 const PORT = 50541;
 const NAME = "DDD";
+const exit = '\u0003';
+
 
 const upKey = 'w';
 const downKey = 's';
@@ -26,6 +28,7 @@ module.exports = {
   IP,
   PORT,
   NAME,
+  exit,
   upKey,
   downKey,
   leftKey,
